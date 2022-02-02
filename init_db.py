@@ -87,7 +87,7 @@ def main():
     # 繰り返し
     while True:
         print()
-        command = input('Your command > ')
+        command = input('Your command > ').upper()
         if command == 'S':
             users = all_users()
             for user in users:
