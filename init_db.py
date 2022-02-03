@@ -87,19 +87,20 @@ def main():
     # 繰り返し
     while True:
         print()
-        command = input('Your command > ').upper()
-        if command == 'S':
+        command = input('Your command > ')
+        command_upper = command.upper()
+        if command_upper == 'S':
             users = all_users()
             for user in users:
                 print(f"Name: {user[0]} | Age: {user[1]}")
 
-        elif command == 'A':
+        elif command_upper == 'A':
             name = input('New user name > ')
             age = input('New user age > ')
             print(f"Add new user: {name}")
             register_user(name, age)
 
-        elif command == 'Q':
+        elif command_upper == 'Q':
             print("Bye!")
             break
 
