@@ -87,24 +87,33 @@ def main():
     # 繰り返し
     while True:
         print()
+        # ユーザーから入力された値を変数「command」に定義。
         command = input('Your command > ')
+        # ユーザーから入力された値を大文字にして変数「command_upper」に定義。
         command_upper = command.upper()
+
         if command_upper == 'S':
+            # 関数「all_users()」に格納されている値を取り出し、繰り返し情報を入れていく。
             users = all_users()
             for user in users:
                 print(f"Name: {user[0]} | Age: {user[1]}")
 
         elif command_upper == 'A':
+            # ユーザーから入力された名前情報を変数「name」に定義。
             name = input('New user name > ')
+            # ユーザーから入力された名前情報を変数「age」に定義。
             age = input('New user age > ')
             print(f"Add new user: {name}")
+            # 関数「register」に引数として「name」「age」を渡す。
             register_user(name, age)
 
         elif command_upper == 'Q':
             print("Bye!")
+            # 終わらせる。
             break
 
         else:
+            # 小文字で入力されたら小文字で返してほしいので、大文字にする前のそのままの値「command」を使用する。
             print(f"{command}: command not found")
 
 
